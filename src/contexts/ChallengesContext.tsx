@@ -2,6 +2,8 @@ import  { createContext, useState, ReactNode, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import challenges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
+import axios from 'axios';
+
 
 interface Challenge {
   type: 'body' | 'eye';
@@ -20,7 +22,6 @@ interface ChallengesContextData {
   resetActiveChallenge: () => void,
   completeChallenge: () => void,
   closeLevelUpModal: () => void,
-
 }
 
 interface ChallengesProviderProps {
@@ -108,7 +109,7 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
         resetActiveChallenge,
         experienceToNextLevel,
         completeChallenge,
-        closeLevelUpModal
+        closeLevelUpModal,
       }}>
       {children}
       { isLevelUpModalOpen && <LevelUpModal /> }

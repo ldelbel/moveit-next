@@ -3,9 +3,22 @@ import { ChallengesContext } from "../contexts/ChallengesContext";
 import { CountdownContext } from "../contexts/CountdownContext";
 import styles from "../styles/components/ChallengeBox.module.css";
 
+
+interface User {
+  level: number,
+  currentExperience: number,
+  challengesCompleted: number,
+}
+
 const ChallengeBox = () => {
   const { activeChallenge, resetActiveChallenge, completeChallenge } = useContext(ChallengesContext);
   const { resetCountDown } = useContext(CountdownContext);
+
+  const updateUser = async (userNewData: User) => {
+    const response = await axios.post('api/updateUserData', { userNewData });
+    const { user } = response.data;
+    Cookies.set('user', JSON.stringify(user));
+  }
 
   const handleChallengeSucceeded = () => {
     completeChallenge();
