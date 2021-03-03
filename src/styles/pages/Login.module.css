@@ -66,6 +66,7 @@
   padding-left: 20px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  color: white;
 }
 
 .inputWrapper input::placeholder {
@@ -77,4 +78,6 @@
   background-color: #4953B8;
   border: none;
   color: var(--white);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
