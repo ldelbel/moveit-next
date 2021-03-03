@@ -1,6 +1,5 @@
 import { NowRequest, NowResponse } from '@vercel/node';
 import { MongoClient, Db } from 'mongodb';
-import url from 'url';
 
 let cachedDb: Db = null;
 

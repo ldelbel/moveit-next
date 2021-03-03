@@ -22,21 +22,21 @@ async function connectToDatabase(uri: string) {
 }
 
 export default async (request: NowRequest, response: NowResponse) => {
-  const { userNewData } = request.body;
+  const { updateUser } = request.body;
 
   const db = await connectToDatabase(process.env.MONGODB_URI);
   const collection = db.collection('users');
 
   const filter = {
-    login: userNewData.login
+    login: updateUser.login
   }
 
   const update = {
     $set: {
-      level:  userNewData.level,
-      currentExperience:  userNewData.currentExperience,
-      challengesCompleted:  userNewData.challengesCompleted,
-      totalExp:  userNewData.totalExp,
+      level:  updateUser.level,
+      currentExperience:  updateUser.currentExperience,
+      challengesCompleted:  updateUser.challengesCompleted,
+      totalExp:  updateUser.totalExp,
     }
   }
 

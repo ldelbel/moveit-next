@@ -24,21 +24,25 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.logoContainer}>
-        <img src="" alt="watermark"/>
+        <img src="/icons/Simbolo.svg" alt="watermark"/>
       </div>
       <div className={styles.loginContainer}>
         <div className={styles.formSection}>
-          <img src="" alt="move.it logo"/>
+          <img src="/icons/Logo.svg" alt="move.it logo"/>
           <div className={styles.formContent}>
             <strong>Bem Vindo</strong>
-            <div>
-              <FaGithub size={40} />
+            <div className={styles.intro}>
+              <FaGithub size={35} />
               <p>Faça login com seu Github para começar</p>
             </div>
             <div className={styles.inputWrapper}>
-              <input type="text" onChange={(e) => setUsername(e.target.value)}/>
+              <input
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Digite seu username"
+              />
               <button type="button" onClick={handleLogin}>
                 <FaChevronRight />
               </button>

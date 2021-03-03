@@ -9,19 +9,27 @@ import Head from 'next/head'
 import ChallengeBox from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 
-interface HomeProps {
+
+interface User {
+  _id: string,
+  login: string,
+  avatar: string,
+  name: string,
   level: number,
   currentExperience: number,
   challengesCompleted: number,
+  totalExp: number,
+}
+
+interface HomeProps {
+  user: User,
 }
 
 export default function Home(props: HomeProps) {
 
   return (
     <ChallengesProvider
-    level={props.level}
-    currentExperience={props.currentExperience}
-    challengesCompleted={props.challengesCompleted}
+     user={props.user}
     >
       <div className={styles.container}>
         <Head>
@@ -61,13 +69,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     redirect();
   }
 
-  const parsedUser = JSON.parse(user);
-
   return {
     props: {
-      level: Number(parsedUser.level),
-      currentExperience: Number(parsedUser.currentExperience),
-      challengesCompleted: Number(parsedUser.challengesCompleted),
+      user: JSON.parse(user),
     },
   }
 }

@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: #5965E0;
+
+  display: flex;
+}
+
+.logoContainer img {
+  height: 95%;
+}
+
+.loginContainer {
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formSection {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.formSection > img {
+  align-self: start;
+}
+
+.formContent strong {
+  margin-bottom: 20px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 180px;
+  color: var(--white);
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #B2B9FF;
+  width: 318px;
+  margin-bottom: 40px;
+}
+
+.intro p {
+  width: 80%;
+}
+
+.inputWrapper {
+  width: 420px;
+  height: 80px;
+  display: flex;
+}
+
+.inputWrapper input {
+  width: 340px;
+  background: linear-gradient(90deg, #4953B8 0%, rgba(73, 83, 184, 0.2) 100%);
+  border: none;
+  padding-left: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.inputWrapper input::placeholder {
+  color: rgb(192, 192, 192); 
+}
+
+.inputWrapper button {
+  width: 80px;
+  background-color: #4953B8;
+  border: none;
+  color: var(--white);
+}
